@@ -114,12 +114,12 @@ lib = os.path.join(comfy_dir, 'custom_nodes/SampleDiffusion/libs/sample_generato
 if not os.path.exists(os.path.join(comfy_dir, lib)):
     os.system(f'git clone https://github.com/sudosilico/sample-diffusion.git {os.path.join(comfy_dir, lib)}')
 sys.path.append(os.path.join(comfy_dir, lib))
-from util.util import load_audio, crop_audio
-from dance_diffusion.api import RequestHandler, Request, ModelType
-from diffusion_library.sampler import SamplerType
-from diffusion_library.scheduler import SchedulerType
-from dance_diffusion.dd.model import DDModelWrapper
-from dance_diffusion.dd.inference import DDInference
+from custom_nodes.SampleDiffusion.libs.sample_generator.util.util import load_audio, crop_audio
+from custom_nodes.SampleDiffusion.libs.sample_generator.dance_diffusion.api import RequestHandler, Request, ModelType
+from custom_nodes.SampleDiffusion.libs.sample_generator.diffusion_library.sampler import SamplerType
+from custom_nodes.SampleDiffusion.libs.sample_generator.diffusion_library.scheduler import SchedulerType
+from custom_nodes.SampleDiffusion.libs.sample_generator.dance_diffusion.dd.model import DDModelWrapper
+from custom_nodes.SampleDiffusion.libs.sample_generator.dance_diffusion.dd.inference import DDInference
 
 def save_audio(audio_out, output_path: str, sample_rate, id_str:str = None):
     out_files = []
